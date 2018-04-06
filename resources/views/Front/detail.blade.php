@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="_token" content="{!! csrf_token() !!}"/>
-    <title>Home</title>
+    <title>KangTongShun的个人网站-文章详情</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/style.css">
@@ -23,7 +23,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <h1 class="logo">
-                        <a href="#">Reedo</a>
+                        <a href="#">KangTongShun</a>
                     </h1>
                 </div>
                 <div class="collapse navbar-collapse" id="header-navbar">

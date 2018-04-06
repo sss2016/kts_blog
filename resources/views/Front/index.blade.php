@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Home</title>
+    <title>KangTongShun的个人网站-主页</title>
     <meta name="_token" content="{!! csrf_token() !!}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="{{asset('plugin/layui/css/layui.css')}}" rel="stylesheet" />
@@ -37,10 +37,10 @@
                         </div>
                     </form>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="index.html">首页</a></li>
-                        <li><a href="detail.html">博客</a></li>
-                        <li><a href="404.html">教程</a></li>
-                        <li><a href="404.html">关于</a></li>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">博客</a></li>
+                        <li><a href="#">教程</a></li>
+                        <li><a href="#">关于</a></li>
                     </ul>
                 </div>
             </div>
