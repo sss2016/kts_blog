@@ -12,7 +12,7 @@ class Comment extends Model
     		'article_id'=>$data['article_id'],
     		"commenter_touch"=>$data['commenter_touch'],
     		"commenter_name"=>$data['commenter_name'],
-    		"commenter_speak"=>$data['commenter_name']
+    		"commenter_speak"=>$data['commenter_speak']
     	]);
     }
 }
