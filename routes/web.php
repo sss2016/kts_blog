@@ -26,13 +26,18 @@ Route::group(['namespace' => 'Admin','prefix'=>'admin'], function(){
 	Route::get('/publish', function () {
     	return view('admin.publish');
 	});
+	Route::post('/submit',"ArticleController@writeData");
 	
+});
+Route::get('/NotFont',function(){
+	return view('Front.404');
 });
 Route::group(['namespace' => 'Front'], function(){
     // 控制器在 "App\Http\Controllers\Front" 命名空间下
 	Route::get('/', "IndexController@indexShow");
-	Route::get('/detail',"IndexController@detailShow");
+	Route::get('/detail/{article_id?}',"IndexController@detailShow");
 	Route::post('/loadData',"IndexController@loadData");
+	Route::post('/sendComment',"IndexController@sendComment");
 	
 
 });

@@ -509,3 +509,9 @@ a:hover {
     color: #FFFFCC;
     cursor: default;
 }
+.article-content p{
+
+    word-break: break-all;
+    word-wrap:break-word;
+
+}

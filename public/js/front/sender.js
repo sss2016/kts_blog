@@ -3,7 +3,7 @@ layui.define(['element', 'layer','flow'],function (exports){
 	var element = layui.element();
     var layer = layui.layer;
      var flow = layui.flow;
-    var c_page = 1;
+    var c_page = 2;
     $.ajaxSetup({
    		headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
 	});
@@ -26,12 +26,14 @@ layui.define(['element', 'layer','flow'],function (exports){
     		'page':c_page
     	},function(res){
         //假设你的列表返回在data集合中
-	          c_page= res.pageinfo.current_page+1
+	          c_page= res.pageinfo.current_page
 	          lis.push(res.html);
 	          console.log(c_page+"--"+res.pageinfo.last_page)
         //执行下一页渲染，第二参数为：满足“加载更多”的条件，即后面仍有分页
         //pages为Ajax返回的总页数，只有当前页小于总页数的情况下，才会继续出现加载更多
         next(lis.join(''), c_page < res.pageinfo.last_page);
+        c_page++;
+
       });
     }
   });

@@ -3,11 +3,15 @@
 namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Models\Article;
+use App\Models\Comment;
+use Illuminate\Http\Request;
 class IndexController extends Controller
 {
 	var $article_  = null;
+	var $comment_  = null;
 	function  __construct(){
 		$this->article_ = new Article();
+		$this->comment_ = new Comment();
 	}
 	public function indexShow($value='')
 	{
@@ -15,8 +19,10 @@ class IndexController extends Controller
 
 		return view('Front.index')->with('initPage',$initPage);
 	}
-	public function detailShow(){
-		return view('Front.detail');
+	public function detailShow(Request $request){
+		$id = $request->route( 'article_id' );
+		$article_data = $this->article_->getOneArticle($id);
+		return view('Front.detail')->with('article_data',$article_data);
 	}
 	public function loadData(){
 		$data = $this->article_->getArticles();
@@ -28,6 +34,10 @@ class IndexController extends Controller
 	                'pageinfo'=>$pageinfo,
 	                'html'=>$html
 	       		];
+	}
+	public function sendComment(Request $request)
+	{
+		$this->comment_->insertComment($request->all());
 	}
 	public function getPageInfo($pageObj)
 	{
