@@ -31,7 +31,7 @@ class Article extends Model
    		foreach ( $list as $item) {
    			$item->labels=$item->label;
    			$item->type_name=$item->type->name;
-   			$item->summeray =strip_tags(mb_substr($item->content, 0, 100, 'gbk')); 
+   			$item->summeray =strip_tags(mb_substr($item->content, 0, 50, 'utf8')); 
    		}
    		return $list;
    }
